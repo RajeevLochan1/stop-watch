@@ -1,0 +1,90 @@
+.header_text{
+    /* width: 100px;
+    height: 100px; */
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes example {
+    from {background-color: red;}
+    to {background-color: rgb(117, 162, 229);}
+  }
+  
+  .animated-border-button {
+    background-color: #263059;
+    border: none;
+    color: #ffffff;
+    outline: none;
+    padding: 12px 40px 10px;
+    position: relative;
+  }
+  
+  .animated-border-button::before,
+  .animated-border-button::after {
+    border: 0 solid transparent;
+    transition: all 0.3s;
+    content: '';
+    height: 0;
+    position: absolute;
+    width: 24px;
+  }
+  
+  .animated-border-button::before {
+    border-top: 2px solid #263059;
+    right: 0;
+    top: -4px;
+  }
+  
+  .animated-border-button::after {
+    border-bottom: 2px solid #263059;
+    bottom: -4px;
+    left: 0;
+  }
+  
+  .animated-border-button:hover::before,
+  .animated-border-button:hover::after {
+    width: 100%;
+  }
+  
+  .block {
+      position: relative;
+      margin: 300px auto 0;
+      /* width: 500px; */
+      height: 30px;
+      background: linear-gradient(0deg, #000, #272727);
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .block:before, .block:after {
+      content: '';
+      position: absolute;
+      left: -2px;
+      top: -2px;
+      background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+          #0000ff, #00ff00,#ffff00, #ff0000);
+      background-size: 400%;
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      z-index: -1;
+      animation: steam 20s linear infinite;
+  }
+  
+  @keyframes steam {
+      0% {
+          background-position: 0 0;
+      }
+      50% {
+          background-position: 400% 0;
+      }
+      100% {
+          background-position: 0 0;
+      }
+  }
+  
+  .block:after {
+      filter: blur(50px);
+  }
